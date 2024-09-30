@@ -1,0 +1,118 @@
+/* Structure globale de la page */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Section gauche avec animation et texte */
+.left-section {
+    background-color: #4B6382;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animation subtile dans le fond */
+.left-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background: url('/images/background-animation.gif') no-repeat center center;
+    background-size: cover;
+    animation: floatBackground 20s infinite linear;
+    opacity: 0.2;
+}
+
+@keyframes floatBackground {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Texte de la section gauche */
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Section droite avec formulaire */
+.right-section {
+    background-color: #FFFFFF;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur du formulaire */
+.form-container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    color: #071739;
+    margin-bottom: 2rem;
+}
+
+/* Style des champs de formulaire */
+.form-container input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #CDD5DB;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Bouton d'inscription */
+.primary-btn {
+    background-color: #A68868;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+    background-color: #8a5c54;
+}
+
+/* Lien de connexion */
+.form-container p a {
+    color: #4B6382;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.form-container p a:hover {
+    text-decoration: underline;
+}
